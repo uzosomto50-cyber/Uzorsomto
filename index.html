@@ -3,93 +3,162 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hygello Cleaning Services</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fff; color:#333; }
-    header { background:#005bbb; color:white; padding:20px; text-align:center; }
-    header h1 { margin:0; font-size:2em; }
-    nav { background:#004a99; text-align:center; }
-    nav a { color:white; text-decoration:none; margin:0 15px; display:inline-block; padding:10px 0; }
-    section { padding:40px 20px; max-width:1000px; margin:auto; }
-    h2 { color:#005bbb; margin-bottom:20px; }
-    .services, .industries { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-    .card { background:#f7f9fc; padding:20px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
-    .cta { text-align:center; margin:40px 0; }
-    .cta form { max-width:500px; margin:auto; text-align:left; background:#f7f9fc; padding:20px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
-    .cta input, .cta textarea { width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px; }
-    .cta button { background:#005bbb; color:white; padding:12px 20px; border:none; border-radius:8px; cursor:pointer; width:100%; }
-    .cta button:hover { background:#004a99; }
-    footer { background:#005bbb; color:white; text-align:center; padding:20px; margin-top:40px; }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>Hygello Cleaning Services</h1>
-    <p>Professional Cleaning & Hygiene Solutions in Owerri</p>
-  </header>  <nav>
-    <a href="#services">Services</a>
-    <a href="#industries">Industries</a>
-    <a href="#why">Why Us</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-  </nav>  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="card"><h3>Janitorial Cleaning</h3><p>Daily office cleaning, restrooms, and more.</p></div>
-      <div class="card"><h3>Commercial Spaces</h3><p>Keep your business spotless and welcoming.</p></div>
-      <div class="card"><h3>Residential Cleaning</h3><p>Professional deep cleaning for your home.</p></div>
-      <div class="card"><h3>Floor & Carpet Care</h3><p>Stain removal, polishing, and maintenance.</p></div>
+<body class="bg-white text-gray-800">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white sticky top-0 z-50 shadow">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold">Hygello</h1>
+      <nav class="space-x-6 hidden md:block">
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#pricing" class="hover:underline">Pricing</a>
+        <a href="#industries" class="hover:underline">Industries</a>
+        <a href="#faq" class="hover:underline">FAQ</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
     </div>
-  </section>  <section id="industries">
-    <h2>Industries We Serve</h2>
-    <div class="industries">
-      <div class="card"><h3>Corporate Offices</h3><p>Healthy and clean work environments.</p></div>
-      <div class="card"><h3>Hospitals & Clinics</h3><p>Hygienic spaces for healthcare facilities.</p></div>
-      <div class="card"><h3>Schools & Institutions</h3><p>Clean spaces for effective learning.</p></div>
-      <div class="card"><h3>Hospitality</h3><p>Hotels, restaurants, and lounges.</p></div>
+  </header>  <!-- Hero -->  <section class="bg-blue-50 py-20 text-center">
+    <h2 class="text-4xl font-bold text-blue-600 mb-4">Professional Cleaning Services in Owerri</h2>
+    <p class="text-lg mb-6">Reliable, affordable, and spotless cleaning for homes, offices, and businesses.</p>
+    <a href="#request-visit" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700">Request a Visit</a>
+  </section>  <!-- Services -->  <section id="services" class="py-16 max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-blue-600 mb-12">Our Services</h2>
+    <div class="grid md:grid-cols-4 gap-8">
+      <div onclick="selectService('Janitorial Cleaning')" class="cursor-pointer bg-white shadow p-6 rounded-xl hover:shadow-lg">
+        <h3 class="font-semibold text-lg mb-2">Janitorial Cleaning</h3>
+        <p>Daily or routine cleaning for offices, schools, and institutions.</p>
+      </div>
+      <div onclick="selectService('Residential Cleaning')" class="cursor-pointer bg-white shadow p-6 rounded-xl hover:shadow-lg">
+        <h3 class="font-semibold text-lg mb-2">Residential Cleaning</h3>
+        <p>Thorough cleaning for apartments, duplexes, and family homes.</p>
+      </div>
+      <div onclick="selectService('Post-Construction Cleaning')" class="cursor-pointer bg-white shadow p-6 rounded-xl hover:shadow-lg">
+        <h3 class="font-semibold text-lg mb-2">Post-Construction</h3>
+        <p>Heavy-duty cleaning after building or renovation projects.</p>
+      </div>
+      <div onclick="selectService('Event Cleaning')" class="cursor-pointer bg-white shadow p-6 rounded-xl hover:shadow-lg">
+        <h3 class="font-semibold text-lg mb-2">Event Cleaning</h3>
+        <p>Pre-event prep and post-event cleanups for weddings, parties, and more.</p>
+      </div>
     </div>
-  </section>  <section id="why">
-    <h2>Why Choose Hygello?</h2>
-    <ul>
-      <li>Trusted professionals with years of experience.</li>
-      <li>Eco-friendly cleaning products.</li>
-      <li>Affordable and flexible packages.</li>
-      <li>Available in Owerri and surrounding areas.</li>
-    </ul>
-  </section>  <section id="pricing">
-    <h2>Pricing</h2>
-    <p>We offer tailored packages to fit your needs. Contact us for a free quote today.</p>
-  </section>  <section id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="card">
-      <h3>Do you bring your own equipment?</h3>
-      <p>Yes, our team comes fully equipped.</p>
+  </section>  <!-- Pricing -->  <section id="pricing" class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-blue-600 mb-12">Our Pricing Packages</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-blue-500">
+          <h3 class="text-xl font-semibold mb-4">Basic Cleaning</h3>
+          <p class="text-4xl font-bold text-blue-600 mb-2">₦15,000<span class="text-base font-medium"> / session</span></p>
+          <p class="text-gray-500 mb-6">For apartments, small offices, or one-time cleanups</p>
+          <ul class="text-gray-700 space-y-2 mb-6 text-left">
+            <li>✔ Floor & surface cleaning</li>
+            <li>✔ Dusting & trash removal</li>
+            <li>✔ Basic restroom cleaning</li>
+            <li>✔ Light kitchen cleanup</li>
+          </ul>
+          <a href="#request-visit" onclick="selectService('Basic Cleaning')" class="block w-full py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-medium">Request Basic Cleaning</a>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-green-500">
+          <h3 class="text-xl font-semibold mb-4">Standard Cleaning</h3>
+          <p class="text-4xl font-bold text-green-600 mb-2">₦35,000<span class="text-base font-medium"> / session</span></p>
+          <p class="text-gray-500 mb-6">For medium-sized offices, homes & retail spaces</p>
+          <ul class="text-gray-700 space-y-2 mb-6 text-left">
+            <li>✔ Includes all Basic services</li>
+            <li>✔ Deep restroom sanitation</li>
+            <li>✔ Window & glass cleaning</li>
+            <li>✔ Kitchen deep cleaning</li>
+            <li>✔ Carpet & upholstery vacuuming</li>
+          </ul>
+          <a href="#request-visit" onclick="selectService('Standard Cleaning')" class="block w-full py-3 bg-green-600 text-white rounded-xl hover:bg-green-700 font-medium">Request Standard Cleaning</a>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-yellow-500">
+          <h3 class="text-xl font-semibold mb-4">Premium / Post-Construction</h3>
+          <p class="text-4xl font-bold text-yellow-600 mb-2">₦75,000<span class="text-base font-medium"> / session</span></p>
+          <p class="text-gray-500 mb-6">For large buildings, events, or intensive cleanups</p>
+          <ul class="text-gray-700 space-y-2 mb-6 text-left">
+            <li>✔ Full deep-clean of property</li>
+            <li>✔ Power scrubbing & stain removal</li>
+            <li>✔ Fumigation & disinfection available</li>
+            <li>✔ Heavy-duty equipment & supplies</li>
+            <li>✔ Team of 4–6 cleaners</li>
+            <li> For 1-3 times weekly</li>
+          </ul>
+          <a href="#request-visit" onclick="selectService('Premium Cleaning')" class="block w-full py-3 bg-yellow-600 text-white rounded-xl hover:bg-yellow-700 font-medium">Request Premium Cleaning</a>
+        </div>
+      </div>
     </div>
-    <div class="card">
-      <h3>Can I schedule weekly cleanings?</h3>
-      <p>Absolutely, we offer flexible scheduling.</p>
+  </section>  <!-- Industries -->  <section id="industries" class="py-16 max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-blue-600 mb-12">Industries We Serve</h2>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="p-6 bg-white shadow rounded-xl">🏢 Corporate Offices</div>
+      <div class="p-6 bg-white shadow rounded-xl">🏬 Retail & Showrooms</div>
+      <div class="p-6 bg-white shadow rounded-xl">🏫 Schools & Institutions</div>
+      <div class="p-6 bg-white shadow rounded-xl">🏥 Hospitals & Clinics</div>
+      <div class="p-6 bg-white shadow rounded-xl">🍴 Restaurants & Kitchens</div>
+      <div class="p-6 bg-white shadow rounded-xl">🏠 Residential Homes</div>
     </div>
-  </section>  <section id="contact">
-    <h2>Request a Visit</h2>
-    <p>Fill out the form below and we’ll get back to you shortly.</p>
-    <div class="cta">
-      <form action="https://formsubmit.co/uzosomto50@gmail.com" method="POST">
-        <input type="hidden" name="_cc" value="blessinguzor052@gmail.com">
-        <input type="hidden" name="_subject" value="New Cleaning Service Request from Hygello Website">
-        <input type="hidden" name="_captcha" value="false">
-        <label>Your Name</label>
-        <input type="text" name="name" placeholder="Enter your name" required>
-        <label>Your Email</label>
-        <input type="email" name="email" placeholder="Enter your email" required>
-        <label>Your Phone</label>
-        <input type="text" name="phone" placeholder="Enter your phone number" required>
-        <label>Service Details</label>
-        <textarea name="message" placeholder="Tell us about your cleaning needs" required></textarea>
-        <button type="submit">Submit Request</button>
-      </form>
+  </section>  <!-- FAQ -->  <section id="faq" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-blue-600 mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-semibold">Do you bring your own cleaning supplies?</h3>
+          <p>Yes, Hygello provides all professional equipment and eco-friendly products.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">Can I schedule recurring services?</h3>
+          <p>Absolutely. We offer daily, weekly, or monthly cleaning contracts tailored to you.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">Do you offer emergency cleaning?</h3>
+          <p>Yes, our team can be dispatched within hours for urgent cleanups in Owerri.</p>
+        </div>
+      </div>
     </div>
-  </section>  <footer>
-    <p>&copy; 2025 Hygello Cleaning Services, Owerri. All Rights Reserved.</p>
-  </footer>
-</body>
-  </html>
+  </section>  <!-- Request a Visit -->  <section id="request-visit" class="py-16 max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-blue-600 mb-8 text-center">Request a Visit</h2>
+    <form action="https://formsubmit.co/hygello.services@gmail.com" method="POST" class="space-y-4 bg-white p-8 shadow rounded-xl">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_autoresponse" value="Thank you for booking with Hygello! Our team will reach out soon.">
+      <input type="hidden" name="_subject" value="New Cleaning Request">
+      <input type="hidden" name="_next" value="https://hygello.com/thank-you.html"><div>
+    <label class="block mb-1">Full Name</label>
+    <input type="text" name="name" required class="w-full border rounded p-2">
+  </div>
+  <div>
+    <label class="block mb-1">Phone</label>
+    <input type="text" name="phone" required class="w-full border rounded p-2">
+  </div>
+  <div>
+    <label class="block mb-1">Email</label>
+    <input type="email" name="email" class="w-full border rounded p-2">
+  </div>
+  <div>
+    <label class="block mb-1">Service Requested</label>
+    <input id="service" type="text" name="service" placeholder="Select from Services/Pricing" class="w-full border rounded p-2">
+  </div>
+  <div>
+    <label class="block mb-1">Message / Additional Info</label>
+    <textarea name="message" class="w-full border rounded p-2"></textarea>
+  </div>
+  <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700">Submit Request</button>
+</form>
+
+  </section>  <!-- Contact -->  <section id="contact" class="py-16 bg-blue-600 text-white text-center">
+    <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+    <p class="mb-6">We’d love to hear from you. Reach us anytime.</p>
+    <div class="space-x-4">
+      <a href="tel:09030543774" class="bg-white text-blue-600 px-4 py-2 rounded-lg">📞 Call Us</a>
+      <a href="https://wa.me/2349060993603" target="_blank" class="bg-white text-blue-600 px-4 py-2 rounded-lg">💬 WhatsApp</a>
+      <a href="mailto:blessinguzor052@gmail.com" class="bg-white text-blue-600 px-4 py-2 rounded-lg">✉ Email</a>
+    </div>
+  </section>  <!-- Footer -->  <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+    <p>© 2025 Hygello Cleaning Services, Owerri. All rights reserved.</p>
+  </footer>  <script>
+    function selectService(serviceName) {
+      document.getElementById('service').value = serviceName;
+      document.getElementById('service').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script></body>
+                                  </html>
